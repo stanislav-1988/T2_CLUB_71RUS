@@ -9,7 +9,7 @@ export const Contacts: FC = observer(() => {
   const { setHeaderTitle } = myStore;
   useEffect(() => {
     setHeaderTitle(HeaderTitle.contacts);
-  }, []);
+  }, [setHeaderTitle]);
 
   return (
     <div className={styles.container}>

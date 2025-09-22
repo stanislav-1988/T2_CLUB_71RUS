@@ -31,7 +31,7 @@ export const Registration = observer(() => {
 
   useEffect(() => {
     setHeaderTitle(HeaderTitle.registration);
-  }, []);
+  }, [setHeaderTitle]);
   const {
     register,
     formState: { errors },
@@ -55,7 +55,7 @@ export const Registration = observer(() => {
   return (
     <div className={styles.registrationList}>
       <div className={styles.registrationForm}>
-        <h3>Регистрация</h3>
+        <h3>Зарегестрироваться</h3>
         <form onSubmit={handleSubmit(registrationData)}>
           <InputLabel text="Имя" />
           <InputReusable

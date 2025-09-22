@@ -21,7 +21,7 @@ export const Authorization: FC = observer(() => {
 
   useEffect(() => {
     setHeaderTitle(HeaderTitle.authorization);
-  }, []);
+  }, [setHeaderTitle]);
   const [thereIsAccess] = useState(false);
   // const navigate = useNavigate();
 

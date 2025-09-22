@@ -10,7 +10,7 @@ export const FirstPage: FC = observer(() => {
   const { setHeaderTitle } = myStore;
   useEffect(() => {
     setHeaderTitle(HeaderTitle.startPage);
-  }, []);
+  }, [setHeaderTitle]);
 
   return (
     <div className={styles.container}>
