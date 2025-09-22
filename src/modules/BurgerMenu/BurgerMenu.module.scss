@@ -1,0 +1,82 @@
+.menu {  
+    & .burgerCheckbox {
+        position: absolute;
+        visibility: hidden;
+        z-index: 3;
+        }
+    & .burger {
+        position: absolute;
+        top: 20px;
+        left: 16px;
+        z-index: 3;
+        cursor: pointer;
+        display: block;
+        border: none;
+        background: transparent;
+        width: 40px;
+        height: 26px;
+        }
+    & .burger::before,
+    & .burger::after {
+        content: '';
+        left: 0;
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 4px;
+        border-radius: 10px;
+        background: rgb(116, 236, 12);;
+        }
+    & .burger::before {
+        top: 0;
+        box-shadow: 0 11px 0 rgb(116, 236, 12);
+        transition: box-shadow .3s .15s, top .3s .15s, transform .3s;
+        }
+    & .burger::after {
+        bottom: 0;
+        transition: bottom .3s .15s, transform .3s;
+        }
+    & .burgerCheckbox:checked + .burger::before {
+        top: 11px;
+        transform: rotate(45deg);
+        box-shadow: 0 6px 0 rgba(0,0,0,0);
+        transition: box-shadow .15s, top .3s, transform .3s .15s;
+        }
+    & .burgerCheckbox:checked + .burger::after {
+        bottom: 11px;
+        transform: rotate(-45deg);
+        transition: bottom .3s, transform .3s .15s;
+        }
+    & .menuList {
+        position: relative;
+        transform: translateX(-200%);
+        transition: 1s;
+        width: 200px;
+        margin-top: -30px;
+        height: calc(100vh - 70px);
+        background-color: rgba(0, 0, 0, 0.7);
+        box-shadow: 20px 0px 100px lch(77.76% 76.46 134.32);
+        width: 350px;
+        z-index: 1;
+        padding-top: 6px;
+        }
+    & .menuItem {
+        font-size: 30px;
+        font-weight: normal;
+        cursor: pointer;
+        overflow: hidden;
+        text-shadow: -400px 0 rgb(132, 255, 71),
+                    400px 0 rgb(6, 92, 252),
+                    0 0 rgb(244, 7, 27);
+        color: transparent;
+        transition: all 1s;
+        }
+    & .menuItem:hover {
+        text-shadow: 0px 0 rgb(132, 255, 71),
+                    0px 0 rgb(6, 92, 252),
+                    0 0 rgb(244, 7, 27);
+        }
+    & .burgerCheckbox:checked ~ .menuList {
+        transform: translateX(0);
+        }
+}

@@ -8,6 +8,8 @@ export type TodoListType = {
 };
 
 class MyStore {
+  openMenu: boolean = false;
+
   /**
    * Лоадер
    */
@@ -36,6 +38,10 @@ class MyStore {
     this.access = false;
     this.password = '';
     this.successfulRegistration = false;
+  };
+
+  setOpenMenu = (open: boolean) => {
+    this.openMenu = open;
   };
 
   setAccess = (access: boolean) => {
