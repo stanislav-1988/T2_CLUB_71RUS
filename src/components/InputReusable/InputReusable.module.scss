@@ -12,13 +12,14 @@
         margin-top: 0px;
         }
     & .styleInput::placeholder {
-        color: var(--tertiary);
+        color: black;
         }
     & .label {
         align-self: flex-end;
         position: relative;
         right: 35px;
         bottom: 8px;
+        color: black;
     }
     
 }

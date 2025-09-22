@@ -48,7 +48,8 @@
         transition: bottom .3s, transform .3s .15s;
         }
     & .menuList {
-        position: relative;
+        position: absolute;
+        top: 100px;
         transform: translateX(-200%);
         transition: 1s;
         width: 200px;

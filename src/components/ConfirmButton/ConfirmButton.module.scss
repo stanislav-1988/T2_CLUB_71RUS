@@ -12,6 +12,7 @@ button {
     margin-top: 22px;
 }
 .submit_form {
-    background: var(--button-basic);
-    color: var(--text-button)
+    background: rgba(87, 87, 87, 0.1);
+    border: 1px solid black;
+    color: black;
 }
