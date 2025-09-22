@@ -1,12 +1,11 @@
 import { observer } from 'mobx-react-lite';
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-import { authorizationInfoLsKey } from '../../assets/constants';
+import { HeaderTitle } from '../../assets/constants';
 import { InputLabel, InputReusable } from '../../components';
 import { ConfirmButton } from '../../components/ConfirmButton';
-import { ROUTES } from '../../providers';
 import myStore from '../../store/myStore';
 import styles from './authorization.module.scss';
 
@@ -17,38 +16,29 @@ type AuthorizationType = {
 
 export const Authorization: FC = observer(() => {
   const {
-    access, setAccess, setName, name: firstName, setEmail,
+    access, setHeaderTitle,
   } = myStore;
-  const [thereIsAccess, setThereIsAccess] = useState(false);
-  const navigate = useNavigate();
+
+  useEffect(() => {
+    setHeaderTitle(HeaderTitle.authorization);
+  }, []);
+  const [thereIsAccess] = useState(false);
+  // const navigate = useNavigate();
 
   const {
     register,
     formState: { errors },
     handleSubmit,
-    reset,
+    // reset,
   } = useForm<AuthorizationType>({
     mode: 'onBlur',
   });
 
   if (access) {
-    navigate(ROUTES.MY_TODO_PAGE_ROUTE);
+    // navigate(ROUTES.MY_TODO_PAGE_ROUTE);
   }
 
-  const sendingDataForAuthorization = (data: AuthorizationType) => {
-    const accessData = localStorage.getItem(`${authorizationInfoLsKey}_${data.email}`);
-    if (accessData) {
-      const { email, password, name } = JSON.parse(accessData || '');
-      if (!firstName) setName(name);
-      if (email === data.email || password === data.password) {
-        setEmail(data.email);
-        setAccess(true);
-        reset();
-        setThereIsAccess(false);
-      } else {
-        setThereIsAccess(true);
-      }
-    }
+  const sendingDataForAuthorization = () => {
   };
 
   return (

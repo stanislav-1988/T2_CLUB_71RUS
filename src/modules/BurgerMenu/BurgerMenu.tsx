@@ -53,7 +53,7 @@ export const BurgerMenu: FC = observer(() => {
         </li>
         <li>
           <button
-            onClick={() => handleNavigate('')}
+            onClick={() => handleNavigate(ROUTES.MERCH)}
             type="button"
             className={styles.menuItem}
           >
@@ -71,7 +71,7 @@ export const BurgerMenu: FC = observer(() => {
         </li>
         <li>
           <button
-            onClick={() => handleNavigate('')}
+            onClick={() => handleNavigate(ROUTES.CONTACTS)}
             type="button"
             className={styles.menuItem}
           >

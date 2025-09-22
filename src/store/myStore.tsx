@@ -1,5 +1,7 @@
 import { makeAutoObservable } from 'mobx';
 
+import { HeaderTitle } from '../assets/constants';
+
 export type TodoListType = {
   todo: string,
   done: boolean,
@@ -19,6 +21,8 @@ class MyStore {
    * Доступ
    */
   access: boolean = false;
+
+  headerTitle: HeaderTitle = HeaderTitle.startPage;
 
   name: string = '';
 
@@ -50,6 +54,10 @@ class MyStore {
 
   setName = (name: string) => {
     this.name = name;
+  };
+
+  setHeaderTitle = (title: HeaderTitle) => {
+    this.headerTitle = title;
   };
 
   setEmail = (email: string) => {

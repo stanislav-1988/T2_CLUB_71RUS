@@ -1,8 +1,9 @@
 import { observer } from 'mobx-react-lite';
+import { useEffect } from 'react';
 import React, { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 
-import { authorizationInfoLsKey } from '../../assets/constants';
+import { HeaderTitle } from '../../assets/constants';
 import { InputLabel, InputReusable } from '../../components';
 import { ConfirmButton } from '../../components/ConfirmButton';
 import { ROUTES } from '../../providers';
@@ -25,7 +26,12 @@ export const Registration = observer(() => {
     setEmail,
     setPassword,
     setSuccessfulRegistration,
+    setHeaderTitle,
   } = myStore;
+
+  useEffect(() => {
+    setHeaderTitle(HeaderTitle.registration);
+  }, []);
   const {
     register,
     formState: { errors },
@@ -35,7 +41,6 @@ export const Registration = observer(() => {
   } = useForm<RegistrationType>();
 
   const registrationData = (data: RegistrationType) => {
-    localStorage.setItem(`${authorizationInfoLsKey}_${data.email}`, JSON.stringify({ email: data.email, password: data.password, name: data.name }));
     setName(data.name);
     setEmail(data.email);
     setPassword(data.password);

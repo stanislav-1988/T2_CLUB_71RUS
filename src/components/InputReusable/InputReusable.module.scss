@@ -2,7 +2,7 @@
     display: flex;
     height: 44px;
     padding: 10px;
-    border: 1px solid var(--background-extra-special);
+    border: 1px solid black;
     border-radius: 12px;
     margin-bottom: 12px;
 
@@ -10,9 +10,11 @@
         caret-color: auto;
         width: 100%;
         margin-top: 0px;
+        font-size: 25px;
         }
     & .styleInput::placeholder {
         color: black;
+        font-size: 20px;
         }
     & .label {
         align-self: flex-end;
@@ -31,7 +33,7 @@
 
 .errorInfo {
     color: var(--text-error);
-    font-size: 14px;
+    font-size: 25px;
     font-style: normal;
     font-weight: 400;
     line-height: 16px;

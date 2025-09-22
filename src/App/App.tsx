@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import {
-  Authorization, FirstPage, Header, Loader, Registration,
+  Authorization, Contacts, FirstPage, Header, Loader, Merch, Registration,
 } from '../modules';
 import { BurgerMenu } from '../modules/BurgerMenu';
 import { ROUTES } from '../providers';
@@ -25,6 +25,8 @@ export const App: FC = observer(() => {
         <Route path={ROUTES.ROOT_ROUTE} element={<FirstPage />} />
         <Route path={ROUTES.AUTHORIZATION_ROUTE} element={<Authorization />} />
         <Route path={ROUTES.REGISTRATION_ROUTE} element={<Registration />} />
+        <Route path={ROUTES.MERCH} element={<Merch />} />
+        <Route path={ROUTES.CONTACTS} element={<Contacts />} />
         <Route path="*" element={<FirstPage />} />
       </Routes>
     </div>
